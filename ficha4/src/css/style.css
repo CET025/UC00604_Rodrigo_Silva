@@ -1,0 +1,278 @@
+/* ------------------------------------------------ Fontes e tamanhos de letras de texto --------------------------------------------*/
+
+h2 {
+    /* Definições e personalizações para a fonte h2 */ 
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.h3cor {
+    /* Definições e personalizações para a fonte h2 */
+    color: blue;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+h4 {
+    /* Definições e personalizações para a fonte h4 geral */
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* ------------------------------------------------ Justificação de texto --------------------------------------------*/
+
+.h4b {
+    /* Justificar o texto */
+    /* Definições e personalizações para a fonte h4 geral */
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 5px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.div2 {
+    /* Centralizar o texto*/
+    /* Definições e personalizações de espaçamento e justificação de texto geral */
+    margin-top: 5px;
+    text-align: center;
+    text-justify: inter-word;
+}
+
+.numero{
+    margin-top: 5px;
+    text-align: right;
+    text-justify: inter-word;
+}
+
+.ex3{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    color: grey;
+}
+
+/* ------------------------------------------------ Tipos e cores de texto --------------------------------------------------*/
+
+p {
+    /* Definições e personalizações para a fonte p geral */
+    color: black;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.p1 {
+    /* Definições e personalizações para a fonte p geral */
+    color: white;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.pr1 {
+    /* Definições e personalizações para a fonte pr1 dada a classe definida em html */
+    color: black;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+div {
+    /* Definições e personalizações de espaçamento e justificação de texto geral */
+    margin-top: 5px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+
+.linha {
+    /* Cria uma área para colocar os elementos na mesma linha (lado a lado).*/
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.linha2 {
+    /* Cria uma área para colocar os elementos na mesma linha (lado a lado).*/
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: green;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.linha3 {
+    /* Cria uma área para colocar os elementos na mesma linha (lado a lado).*/
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.titulo {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.titulo2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+/* ------------------------------------------------ Formatação para o corpo da página --------------------------------------------------*/
+table, th, td{
+    border: 1px solid black;
+}
+
+body {
+    /* Definições e personalizações para o fundo da imagem web*/
+    background-color: oklch(27.141% 0.08463 140.457 / 0.842);
+}
+
+
+.pagina1 {
+    /* Definições e personalizações para o fundo da imagem web*/
+    background-color: #a9bdab;
+}
+
+.pagina2 {
+    /* Definições e personalizações para o fundo da imagem web*/
+    background-color: hsl(141, 32%, 75%);
+}
+
+
+.pagina3 {
+    /* Definições e personalizações para o fundo da imagem web*/
+    background-color: hsl(101, 50%, 79%);
+}
+
+
+.body2 {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hwb(135 11% 30% / 0.842);
+}
+
+
+/* ------------------------------------------------ Formatação para a caixa do input --------------------------------------------------*/
+
+.corcaixa {
+    background-color: hsl(98, 5%, 71%);
+}
+
+/*classe para atribuir aos botoes*/
+.btn {
+    /* Definições e personalizações para a fonte btn dada a classe definida em html */
+    width: 70px;
+    height: 30px;
+    background-color: #094e07;
+    color: white;
+    border: 3px solid black;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+
+.box2 {
+    border: 2px solid black;
+    text-align: center;
+    background-color: hwb(135 11% 30% / 0.842);
+    border-radius: 25px;
+}
+/* ------------------------------------------------ Formatação para a imagem da página --------------------------------------------------*/
+
+img {
+    /* Definições e personalizações do tamanho da imagem geral */
+    width: 16.3%;
+    height: auto;
+}
+
+.logo {
+    width: 400px;
+    height: auto;
+}
+
+/* ------------------------------------------------ Ids identificados --------------------------------------------------*/
+
+#idade {
+    /* Todos os IDs devem ser indicados por #  */
+    background-color: blue;
+    color: white;
+    border: 10px solid green;
+}
+
+/* ------------------------------------------------ Menu geral identificados --------------------------------------------------*/
+
+.campos {
+    /*Cria uma área só para os campos de texto, organizando eles juntos.*/
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-container {
+    /* Definições e personalizações para a fonte form-container dada a classe definida em html */
+    display: flex;
+    gap: 20px;
+    /* espaço entre os blocos */
+    flex-wrap: wrap;
+    /* permite quebrar linha se não couber */
+}
+
+.form-container>div {
+    /* Definições e personalizações para a fonte form-container dada a classe definida em html */
+    display: flex;
+    flex-direction: column;
+    /* label em cima do input */
+    min-width: 200px;
+}
+
+
+.caixa-menu {
+    background: #6aa762;
+    padding: 30px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.corpomenu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    /* coloca um embaixo do outro */
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.corpomenu a {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.corpomenu a:hover {
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+
+}
+
+.a2:visited {
+    color: purple;
+}
+
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt"> <!-- Linguagem a ser predefinida-->
+
+<head>
+    <meta charset="UTF-8"> <!-- Linguagem a ser predefinida-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 3 - 04/05/2026</title> <!-- Nome do arquivo-->
+    <link rel="stylesheet" href="src/css/style.css"> <!-- Conexão do ficheiro CSS com o ficheiro HTML-->
+    <script src="src/js/funcoes.js"></script> <!-- Conexão do ficheiro javascript com o ficheiro HTML-->
+</head>
+
+<body>
+
+    <!-- Resolução e aplicação do exercicio da média dos alunos-->
+    <h2>Campeonato de Basquetebol</h2>
+    <div>
+        <p>Escreva quais são as cinco equipas para participar do campeonato de basquetebol com nome, número de vitórias
+            e derrotas.</p>
+    </div>
+    <div class="ex3">
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="Nome"> Nome da equipa: </label>
+                <input class="box2" type="text" id="Nome">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="NV">Número de vitórias: </label>
+                <input  class="box2" type="text" id="NV">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="ND">Número de derrotas: </label>
+                <input class="box2" type="text" id="ND">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+        </div>
+    </div>
+
+    <!--Criação de um botão para o calculo-->
+    <div>
+        <button class="btn" type="button" onclick="RegistarEquipa()">Registar</button>
+        <!--RegistarProdutos é a função que deve ser especificada no ficheiro javascript-->
+        <button class="btn" type="button" onclick="QuadroResultados()">Quadro</button>
+        <!--ListaProdutos é a função que deve ser especificada no ficheiro javascript-->
+    </div>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome da Equipa</th>
+                    <th>Vitórias</th>
+                    <th>Derrotas</th>
+                    <th>% de vitórias</th>
+                </tr>
+            </thead>
+
+            <tbody id="ListaBasquete">
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="ex3">
+        <label for="nomeEdit"> Editar nome</label>
+        <input class="box2" type="text" id="nomeEdit">
+
+        <label for="NVEdit"> Editar nº vitórias</label>
+        <input class="box2" type="text" id="NVEdit">
+
+        <label for="NDEdit">Editar nº derrotas</label>
+        <input class="box2" type="text" id="NDEdit">
+
+        <button class="btn" type="button" id="botao">Guardar</button>
+    </div>
+
+</body>
+
+</html>

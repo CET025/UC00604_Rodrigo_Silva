@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt"> <!-- Linguagem a ser predefinida-->
+
+<head>
+    <meta charset="UTF-8"> <!-- Linguagem a ser predefinida-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 7 - 17/05/2026</title> <!-- Nome do arquivo-->
+    <link rel="stylesheet" href="src/css/style.css"> <!-- Conexão do ficheiro CSS com o ficheiro HTML-->
+    <script src="src/js/jquery.js"></script>
+    <!-- Conexão do ficheiro javascript com o ficheiro HTML jquery, ATENCAO: sempre deve estar em primeiro lugar antes do ficheiro de funções JS-->
+    <script src="src/js/funcoes.js"></script> <!-- Conexão do ficheiro javascript com o ficheiro HTML-->
+</head>
+
+<body>
+
+    <!--REGISTO DOS DADOS NO EVENTO MUSICAL-->
+
+      <h2>Registar tipo musical</h2>
+
+        <label for="novoTipoMusica">Introduza o novo tipo musical</label>
+        <input type="text" id="novoTipoMusica">
+
+        <button type="button" onclick="registoTipoMusical()">Registar</button>
+
+    <h2>Registo do evento musical</h2>
+    <div class="ex3">
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="N_registo">Número de registo: </label>
+                <input class="box2" type="text" id="N_registo">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="local">Local: </label>
+                <input class="box2" type="text" id="local">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="latitude">Coordenadas geográficas (latitude): </label>
+                <input class="box2" type="number" id="latitude">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="longitude">Coordenadas geográficas (longitude): </label>
+                <input class="box2" type="text" id="longitude">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="horario">Horário: </label>
+                <input class="box2" type="time" id="horario">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label class="font" for="tipoEvento">Escolha o tipo musical do evento</label>
+                <div>
+                    <select id="tipoEvento" disabled>
+                        <option value="-1" disabled selected>Sem dados registados</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn" type="button" onclick="RegistarEvento()">Registar</button>
+    </div> <!--REGISTO NO EVENTO MUSICAL é a função que deve ser especificada no ficheiro javascript-->
+
+
+
+    <!--REGISTO DOS DADOS DA BANDA-->
+    <h2>Registo das bandas</h2>
+    <div class="ex3">
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="nome_banda">Nome da banda: </label>
+                <input class="box2" type="text" id="nome_banda">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="codigo">Código: </label>
+                <input class="box2" type="text" id="codigo">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label class="font" for="tipoBanda">Escolha o tipo musical da banda</label>
+                <div>
+                    <select id="tipoBanda" disabled>
+                        <option value="-1" disabled selected>Sem dados registados</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+    <div>
+        <button class="btn" type="button" onclick="RegistarBandas()">Registar</button>
+        <!--REGISTAR BANDAS NO EVENTO é a função que deve ser especificada no ficheiro javascript-->
+    </div>
+
+
+    <h2>Associar bandas a um evento</h2>
+
+    <label class="font" for="associarEvento">Evento</label>
+    <div class="ex3 campos">
+        <select id="associarEvento" onchange="checklistbandas()" disabled>
+            <option value="-1" disabled selected>Sem dados registados</option>
+        </select>
+    </div>
+
+    <div id="ChecagemdasBandas"></div>
+
+    <button type="button" onclick="AssociacaodasBandas()">Registar</button>
+    </div>
+
+    <div>
+
+        <!--REGISTO DOS DADOS DO PUBLICO-->
+        <h2>Registo do público</h2>
+        <div class="ex3">
+            <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+            <div class="campos">
+                <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+                <div>
+                    <label class="font" for="publicoEvento">Evento</label>
+                    <div>
+                        <select id="publicoEvento" disabled>
+                            <option value="-1" disabled selected>Sem dados registados</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div>
+                    <label for="nome_publico">Nome: </label>
+                    <input class="box2" type="text" id="nome_publico">
+                    <!--Criação um local para inserir texto, com exemplo-->
+                </div>
+
+                <div>
+                    <label for="NIF">NIF: </label>
+                    <input class="box2" type="number" id="NIF">
+                    <!--Criação um local para inserir texto, com exemplo-->
+                </div>
+
+                <div>
+                    <label for="N_telemovel">Número telemóvel: </label>
+                    <input class="box2" type="number" id="N_telemovel">
+                    <!--Criação um local para inserir texto, com exemplo-->
+                </div>
+
+                <div>
+                    <label for="Email">E-mail: </label>
+                    <input class="box2" type="text" id="Email">
+                    <!--Criação um local para inserir texto, com exemplo-->
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button class="btn" type="button" onclick="RegistarPublico()">Registar</button>
+            <!--REGISTAR PUBLICO é a função que deve ser especificada no ficheiro javascript-->
+        </div>
+
+
+
+        <h2>Listagem de bandas por evento</h2>
+
+        <label class="font" for="listagemEventoBandas">Evento</label>
+        <div>
+            <select id="listagemEventoBandas" onchange="listagemBandasEvento()" disabled>
+                <option value="-1" disabled selected>Sem dados registados</option>
+            </select>
+        </div>
+
+        <ul id="listaBandasEvento"></ul>
+    </div>
+
+    <div>
+        <h2>Listagem de público por evento</h2>
+
+        <label class="font" for="listagemEventoPublico">Evento</label>
+        <div>
+            <select id="listagemEventoPublico" onchange="listagemPublicoEvento()" disabled>
+                <option value="-1" disabled selected>Sem dados registados</option>
+            </select>
+        </div>
+
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th class="linha">Nome</th>
+                    <th class="linha">NIF</th>
+                    <th class="linha">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaPublico">
+
+            </tbody>
+        </table>
+
+
+</body>
+
+</html>

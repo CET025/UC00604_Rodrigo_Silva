@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt"> <!-- Linguagem a ser predefinida-->
+
+<head>
+    <meta charset="UTF-8"> <!-- Linguagem a ser predefinida-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6 - 11/05/2026</title> <!-- Nome do arquivo-->
+    <link rel="stylesheet" href="src/css/style.css"> <!-- Conexão do ficheiro CSS com o ficheiro HTML-->
+    <script src="src/js/jquery.js"></script>
+    <!-- Conexão do ficheiro javascript com o ficheiro HTML jquery, ATENCAO: sempre deve estar em primeiro lugar antes do ficheiro de funções JS-->
+    <script src="src/js/funcoes.js"></script> <!-- Conexão do ficheiro javascript com o ficheiro HTML-->
+</head>
+
+<body>
+
+    <!--Criação de registo de clientes-->
+    <h2>Registo de clientes</h2>
+    <div class="ex3">
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="Nome">Nome: </label>
+                <input class="box2" type="text" id="Nome">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="email">E-mail: </label>
+                <input class="box2" type="text" id="email">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="NIF"> Número de Identificação Fiscal (NIF): </label>
+                <input class="box2" type="number" id="NIF">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="Morada">Morada: </label>
+                <input class="box2" type="text" id="Morada">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <button class="btn" type="button" onclick="RegistarCliente()">Registar</button>
+        <!--RegistarCliente é a função que deve ser especificada no ficheiro javascript-->
+        <button class="btn" type="button" onclick="ListaCliente()">Listagem</button>
+        <!--RegistarProduto é a função que deve ser especificada no ficheiro javascript-->
+    </div>
+
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>NIF</th>
+                    <th>Morada</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+
+            <tbody id="LisCliente">
+
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Editar registo de clientes</h2>
+    <div>
+        <select id="Clientes" onchange="ClienteEdicao(this.value)">
+            <option value="-99">Selecione o cliente</option>
+        </select>
+    </div>
+    <div class="ex3">
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="NomeEditado">Nome: </label>
+                <input class="box2" type="text" id="NomeEditado">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="emailEditado">E-mail: </label>
+                <input class="box2" type="text" id="emailEditado">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="NIFEditado"> Número de Identificação Fiscal (NIF): </label>
+                <input class="box2" type="number" id="NIFEditado">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="MoradaEditado">Morada: </label>
+                <input class="box2" type="text" id="MoradaEditado">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+
+                <button type="button" id="botaoCliente">Registar</button>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!--Criação de registo de produtos-->
+    <h2>Registo de produtos</h2>
+    <div class="ex3">
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="NomeProduto">Nome do produto: </label>
+                <input class="box2" type="text" id="NomeProduto">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="referencia">Referência do produto: </label>
+                <input class="box2" type="number" id="referencia">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="preco"> Preço do produto (sem IVA): </label>
+                <input class="box2" type="number" id="preco">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <button class="btn" type="button" onclick="RegistarProduto()">Registar</button>
+        <!--RegistarProduto é a função que deve ser especificada no ficheiro javascript-->
+        <button class="btn" type="button" onclick="ListaProduto()">Listagem</button>
+        <!--RegistarProduto é a função que deve ser especificada no ficheiro javascript-->
+    </div>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Referência</th>
+                    <th>Preço (sem IVA)</th>
+                </tr>
+            </thead>
+
+            <tbody id="LisProduto">
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <h2>Editar registo do preço do produto</h2>
+    <div>
+        <select id="ListaProd" onchange="ProdutoEdicao(this.value)">
+            <option value="-99">Selecione o produto </option>
+        </select>
+    </div>
+
+    <div>
+        <label for="precoEditado"> Preço do produto (sem IVA): </label>
+        <input class="box2" type="number" id="precoEditado">
+        <!--Criação um local para inserir texto, com exemplo-->
+    </div>
+
+    <div>
+
+        <button type="button" id="botaoProduto">Registar</button>
+
+    </div>
+
+    <!--Criação de orçamento-->
+    <h2>Orçamento</h2>
+    <!--Criação de um botão para o orçamento do cliente-->
+
+    <div class="ex3">
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="norcamento"> Número do orçamento: </label>
+                <input class="box2" type="number" id="norcamento">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+        </div>
+        <div>
+            <button class="btn" type="button" onclick="RegistarOrcamento()">Orçamento</button>
+            <!--ListaProdutos é a função que deve ser especificada no ficheiro javascript-->
+            <button class="btn" type="button" onclick="ListaClienteOrcamento()">Listagem</button>
+            <!--ListaProdutos é a função que deve ser especificada no ficheiro javascript-->
+        </div>
+
+
+        <div>
+            <select id="Clientesorcamento" onchange="SelecaoClienteOrcamento(this.value)">
+                <option value="-99">Selecione o cliente </option>
+            </select>
+        </div>
+
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número do orçamento</th>
+                        <th>Cliente</th>
+                        <th>Referência do produto</th>
+                        <th>Produto</th>
+                        <th>Preço (sem IVA)</th>
+                    </tr>
+                </thead>
+
+                <tbody id="ListaClienteOrcamentodados">
+
+                </tbody>
+            </table>
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt"> <!-- Linguagem a ser predefinida-->
+ 
+<head> 
+    <meta charset="UTF-8"> <!-- Linguagem a ser predefinida-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1 - 29/04/2026</title> <!-- Nome do arquivo-->
+    <link rel="stylesheet" href="src/css/style.css"> <!-- Conexão do ficheiro CSS com o ficheiro HTML-->
+    <script src="src/js/funcoes.js"></script> <!-- Conexão do ficheiro javascript com o ficheiro HTML-->
+</head>
+ 
+<body>
+   <!-- Resolução e aplicação do exercicio da média dos alunos-->
+    <h2>Lista de automóveis</h2>
+    <div>
+        <p>Todos os veículos registados tem de ter marca, modelo, matricula, consumo do combustível e quilómetros efectuados.</p>
+    </div>
+    <div class="linha">
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="marca"> Insira a marca do automóvel: </label>
+                <input type="text" id="marca">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="modelo">Insira o modelo do automóvel: </label>
+                <input type="text" id="modelo">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="matricula">Insira a matrícula do automóvel: </label>
+                <input type="text" id="matricula" placeholder="AA-00-AA">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="consumo">Insira o consumo do automóvel (Litros):</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="consumo">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID-->
+            </div>
+
+            <div>
+                <label for="kms">Insira os quilómetros efectuados do automóvel (Km):</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="kms">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID-->
+            </div>
+
+        </div>
+    </div>
+
+    <!--Criação de um botão para o calculo-->
+    </div>
+    <button class="btn" type="button" onclick="Registoautomovel()">Registar</button>
+    <!--Registoautomovel é a função que deve ser especificada no ficheiro javascript-->
+    <button class="btn" type="button" onclick="Listaautomovel()">Lista</button>
+    <!--Listaautomovel é a função que deve ser especificada no ficheiro javascript-->
+    </div>
+    <div id="Listacarros">
+    </div>
+</body>
+ 
+</html>

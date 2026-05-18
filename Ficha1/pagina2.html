@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt"> <!-- Linguagem a ser predefinida-->
+
+<head>
+    <meta charset="UTF-8"> <!-- Linguagem a ser predefinida-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1 - 22/04/2026</title> <!-- Nome do arquivo-->
+    <link rel="stylesheet" href="src/css/style.css"> <!-- Conexão do ficheiro CSS com o ficheiro HTML-->
+    <script src="src/js/funcoes.js"></script> <!-- Conexão do ficheiro javascript com o ficheiro HTML-->
+</head>
+
+<body>
+
+
+    <!-- Resolução e aplicação do exercicio da VM com aplicação de IF e ELSE-->
+    <h2>Dados da viagem</h2>
+    <h3>Classificação da velocidade média</h3>
+    <div>
+        <p>Para saber a classificação da velocidade média, insira a distância em quilómetros e o tempo de viagem:
+        </p>
+    </div>
+    <div>
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div>
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+            <div>
+                <label for="n15">Distância percorrida em quilómetros:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n15">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n15-->
+            </div>
+
+            <div>
+                <label for="n16">Tempo da viagem em horas:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n16">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n16-->
+            </div>
+
+            <!--Criação de um botão para o calculo-->
+            <button class="btn" type="button" onclick="Class_Vel()">Avaliar</button>
+            <!--Class_Vel é a função que deve ser especificada no ficheiro javascript-->
+        </div>
+    </div>
+    <div>
+        <!--Mostra o texto de resultado da operação após pressionar o botão EXEMPLO DE DOIS RESULTADOS NO MESMO BOTAO-->
+        <h4> Distância: <span id="n15_"></span> </h4>
+        <h4> Tempo: <span id="n16_"></span> </h4>
+        <h4> Velocidade Média: <span id="resultado_VM"></span> km/h </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+        <h4> Classificação VM: <span id="resultado_Aviso"></span> </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt"> <!-- Linguagem a ser predefinida-->
+
+<head>
+    <meta charset="UTF-8"> <!-- Linguagem a ser predefinida-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1 - 22/04/2026</title> <!-- Nome do arquivo-->
+    <link rel="stylesheet" href="src/css/style.css"> <!-- Conexão do ficheiro CSS com o ficheiro HTML-->
+    <script src="src/js/funcoes.js"></script> <!-- Conexão do ficheiro javascript com o ficheiro HTML-->
+</head>
+
+<body>
+
+    <!-- Resolução e aplicação do exercicio da média dos alunos-->
+    <h2>Ficha do Aluno</h2>
+    <div>
+        <p>Para o cálculo da média dos alunos, preencha os quadros abaixo com as notas dos alunos.</p>
+    </div>
+    <div class="linha">
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="nome">Nome e Apelido: </label>
+                <input type="text" id="nome" placeholder="Nome Apelido">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="curso">Curso: </label>
+                <input type="text" id="curso"> <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="turma">Turma: </label>
+                <input type="text" id="turma"> <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="n9">Primeira nota:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n9">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n9-->
+            </div>
+
+            <div>
+                <label for="n10">Segunda nota:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n10">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n10-->
+            </div>
+
+            <div>
+                <label for="n11">Terceira nota:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n11">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n11-->
+            </div>
+            <!--Criação de um botão para o calculo-->
+            <button class="btn" type="button" onclick="calcularMedia()">Calcular</button>
+            <!--calcularMedia é a função que deve ser especificada no ficheiro javascript-->
+        </div>
+    </div>
+
+    <div> <!--Mostra o texto de resultado da operação após pressionar o botão-->
+        <h4> Nome do aluno (a): <span id="nome_"></span> </h4>
+        <h4> Curso do aluno (a): <span id="curso_"></span> </h4>
+        <h4> Turma do aluno (a): <span id="turma_"></span> </h4>
+        <h4> Primeira nota do (a) aluno (a): <span id="n9_"></span> </h4>
+        <h4> Segunda nota do (a) aluno (a): <span id="n10_"></span> </h4>
+        <h4> Terceira nota do (a) aluno (a): <span id="n11_"></span> </h4>
+        <h4> A média final do (a) aluno (a): <span id="resultado_media"></span> </h4>
+        <h4 class="font">Estado: <span id="estadoAluno"></span></h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+</body>
+
+</html>
