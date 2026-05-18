@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="pt"> <!-- Linguagem a ser predefinida-->
+
+<head>
+    <meta charset="UTF-8"> <!-- Linguagem a ser predefinida-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1 - 22/04/2026</title> <!-- Nome do arquivo-->
+    <link rel="stylesheet" href="src/css/style.css"> <!-- Conexão do ficheiro CSS com o ficheiro HTML-->
+    <script src="src/js/funcoes.js"></script> <!-- Conexão do ficheiro javascript com o ficheiro HTML-->
+</head>
+
+<body>
+
+    <img src="src/images/Logo-IEFP-1.jpg" alt="Logo IEFP"> <!-- Inserir imagem indicando o diretório-->
+    <img src="src/images/Logo-IEFP-1.jpg" alt="Logo IEFP"> <!-- Inserir imagem indicando o diretório-->
+    <img src="src/images/Logo-IEFP-1.jpg" alt="Logo IEFP"> <!-- Inserir imagem indicando o diretório-->
+    <img src="src/images/Logo-IEFP-1.jpg" alt="Logo IEFP"> <!-- Inserir imagem indicando o diretório-->
+    <img src="src/images/Logo-IEFP-1.jpg" alt="Logo IEFP"> <!-- Inserir imagem indicando o diretório-->
+    <img src="src/images/Logo-IEFP-1.jpg" alt="Logo IEFP"> <!-- Inserir imagem indicando o diretório-->
+
+
+    <!-- AULA 1 22/04/2026 - INICIO-->
+
+    <h2 class="div2">UC00604: Programar para web, na vertente frontend (cliente-side)</h2>
+    <p>Professor responsável: Miguel Romão</p>
+    <p>Aluno: Rodrigo Cesar </p>
+    <div>
+        <p>O presente trabalho teve como objetivo o desenvolvimento de ficheiros em
+            HTML, CSS e JavaScript, visando a compreensão das principais tecnologias utilizadas na construção de páginas
+            web dinâmicas e interativas.</p>
+
+        <p>No âmbito da estruturação de conteúdos, foram aplicados conhecimentos de HTML para a organização semântica
+            dos elementos da página, incluindo textos, formulários e componentes visuais.</p>
+
+        <p>Relativamente ao design e à apresentação, foram utilizados recursos de CSS para a formatação e personalização
+            de elementos, nomeadamente estilos tipográficos, cores, dimensões, espaçamentos e alinhamentos, assegurando
+            uma interface visualmente organizada e funcional.</p>
+
+        <p>Adicionalmente, procedeu-se à implementação de funções em JavaScript, com o propósito de introduzir
+            interatividade e processamento lógico, permitindo a manipulação de dados inseridos pelo utilizador e a
+            atualização dinâmica de conteúdos na página.</p>
+
+        <p>Por fim, o trabalho possibilitou compreender a integração entre HTML, CSS e JavaScript, evidenciando a
+            interdependência entre estrutura, apresentação e comportamento no desenvolvimento web.</p>
+    </div>
+
+    <h2>Teste validação de operações textuais</h2>
+    <!-- Texto a negrito onde h1 indicada maior fonte e h6 indica a menor fonte-->
+    <div>
+        <p>Nesta secção, foram criadas caixas em dois formatos (texto e número), com exemplos de preenchimento e uma
+            caixa com lista de categorias (opções):</p>
+    </div>
+    <h3>Dados pessoais</h3>
+    <div class="form-container">
+
+        <div>
+            <label for="nome">Primeiro nome: </label>
+            <input type="text" placeholder="Nome"> <!--Criação um local para inserir texto, com exemplo-->
+        </div>
+        <div>
+            <label for="apelido">Último nome: </label>
+            <input type="text" placeholder="Apelido"> <!--Criação um local para inserir texto, com exemplo-->
+        </div>
+
+        <div>
+            <label for="idade">Idade: </label>
+            <input type="number" value="18"> <!--Criação um local para inserir numeral, sem exemplo-->
+        </div>
+
+        <div>
+            <label for="NIF">Número de contribuição fiscal: </label>
+            <input type="number" placeholder="123456789"> <!--Criação um local para inserir numeral, com exemplo-->
+        </div>
+
+        <div>
+            <label for="localidade"> Residência fiscal: </label>
+            <input type="text" placeholder="Concelho"> <!--Criação um local para inserir texto, com exemplo-->
+        </div>
+
+        <div>
+            <button class="btn" type="button">Registar</button>
+        </div>
+    </div>
+
+    <h3>Informações profissionais</h3>
+
+    <div class="form-container">
+
+        <div>
+            <label>Experiência profissional: </label><!--Criação de uma lista de itens como opção de resposta-->
+            <select name="Experiencia">
+                <option value="EnsinoBasico">Ensino Básico</option>
+                <option value="EnsinoSecundario">Ensino Secundário</option>
+                <option value="Licenciatura_Bacharel">Licenciatura/Bacharelato</option>
+                <option value="Mestrado">Mestrado</option>
+                <option value="Doutorado">Doutorado</option>
+                <option value="Posdoc">Pós-doutorado</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Área de formação: </label><!--Criação de uma lista de itens como opção de resposta-->
+            <select name="formacao">
+                <option value="TI">Tecnologias de Informação</option>
+                <option value="Engenharia">Engenharias</option>
+                <option value="Saúde">Saúde</option>
+                <option value="Gestao">Gestão</option>
+                <option value="Economia">Economia</option>
+                <option value="Turismo">Turismo</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="Expetativas">Expetativa salário mensal (brutos): </label>
+            <input type="number" placeholder="1500"> <!--Criação um local para inserir numeral, com exemplo-->
+        </div>
+
+        <div>
+            <label>Experiência profissional: </label><!--Criação de uma lista de itens como opção de resposta-->
+            <select name="Experiencia">
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Conhecimento da oportunidade: </label><!--Criação de uma lista de itens como opção de resposta-->
+            <select name="cinhecimento">
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Facebook">Facebook</option>
+                <option value="Indeed">Indeed</option>
+                <option value="Outros">Outros</option>
+            </select>
+        </div>
+
+        <div>
+            <button class="btn" type="button">Registar</button>
+        </div>
+    </div>
+
+
+
+    <h2>Teste validação de operações matemáticas</h2>
+    <!-- Texto a negrito onde h1 indicada maior fonte e h6 indica a menor fonte-->
+
+    <!-- 1) Criação de um botão para calcular soma de dois números-->
+    <p class="pr1">1) Insira dois números no local indicado para realização da operação matemática de soma (X + Y = Z):
+    </p> <!--p corresponde um paragráfo com dada formação indicada no ficheiro CSS-->
+
+    <div class="linha"> <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+            <div>
+                <label for="n1">Insira um número</label> <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n1">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n1-->
+            </div>
+
+            <div>
+                <label for="n2">Insira um número</label> <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n2">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n2-->
+            </div>
+        </div>
+
+        <!--Criação de um botão para calcular soma de dois números-->
+        <button class="btn" type="button" onclick="calcularSoma()">Calcular</button>
+        <!--calcularSoma é a função que deve ser especificada no ficheiro javascript-->
+    </div>
+
+    <div> <!--Mostra o texto de resultado da operação após pressionar o botão-->
+        <h4> Resultado: <span id="resultado_soma"></span> </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+
+
+    <!-- 2) Criação de um botão para calcular multiplicação de dois números-->
+    <p class="pr1">2) Insira dois números no local indicado para realização da operação matemática de multiplicação (X x
+        Y = Z):
+    </p> <!--p corresponde um paragráfo com dada formação indicada no ficheiro CSS-->
+
+    <div class="linha"> <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+            <div>
+                <label for="n3">Insira um número</label> <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n3">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n3-->
+            </div>
+
+            <div>
+                <label for="n4">Insira um número</label> <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n4">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n4-->
+            </div>
+        </div>
+
+        <!--Criação de um botão para calcular multiplicação de dois números-->
+        <button class="btn" type="button" onclick="calcularMul()">Calcular</button>
+        <!--calcularMul é a função que deve ser especificada no ficheiro javascript-->
+    </div>
+
+    <div> <!--Mostra o texto de resultado da operação após pressionar o botão-->
+        <h4> Resultado: <span id="resultado_mul"></span> </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+
+    <!-- 3) Criação de um botão para calcular divisão de dois números-->
+    <p class="pr1">3) Insira dois números no local indicado para realização da operação matemática de divisão (X / Y =
+        Z):
+    </p> <!--p corresponde um paragráfo com dada formação indicada no ficheiro CSS-->
+
+    <div class="linha"> <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+            <div>
+                <label for="n5">Insira um número</label> <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n5">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n5-->
+            </div>
+
+            <div>
+                <label for="n6">Insira um número</label> <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n6">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n6-->
+            </div>
+        </div>
+
+        <!--Criação de um botão para calcular divisão de dois números-->
+        <button class="btn" type="button" onclick="calcularDiv()">Calcular</button>
+        <!--calcularDiv é a função que deve ser especificada no ficheiro javascript-->
+    </div>
+
+    <div> <!--Mostra o texto de resultado da operação após pressionar o botão-->
+        <h4> Resultado: <span id="resultado_div"></span> </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+
+    <!-- 4) Criação de um botão para calcular subtração de dois números-->
+    <p class="pr1">4) Insira dois números no local indicado para realização da operação matemática de subtração (X - Y =
+        Z):
+    </p> <!--p corresponde um paragráfo com dada formação indicada no ficheiro CSS-->
+
+    <div class="linha"> <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+            <div>
+                <label for="n7">Insira um número</label> <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n7">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n7-->
+            </div>
+
+            <div>
+                <label for="n8">Insira um número</label> <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n8">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n8-->
+            </div>
+        </div>
+
+        <!--Criação de um botão para calcular subtração de dois números-->
+        <button class="btn" type="button" onclick="calcularSub()">Calcular</button>
+        <!--calcularSub é a função que deve ser especificada no ficheiro javascript-->
+    </div>
+
+    <div> <!--Mostra o texto de resultado da operação após pressionar o botão-->
+        <h4> Resultado: <span id="resultado_sub"></span> </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+
+    <!-- AULA 1 22/04/2026 -FIM-->
+
+    <!-- EXEMPLOS DOS EXERCICIOS DE PSEUDOCODIGO-->
+
+
+    <!-- Resolução e aplicação do exercicio das temperaturas F e K-->
+    <h2>Cálculo das temperaturas em graus Celcius em diferentes escalas</h2>
+    <h3>Notas dos alunos</h3>
+    <div>
+        <p>Para saber a temperatura em graus Celcius (°C) nas escalas Fahrenheit e Kelvin, indique no quadro abaixo:</p>
+    </div>
+    <div class="linha"> <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+            <div>
+                <label for="n14">Temperatura (°C):</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n14">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n14-->
+            </div>
+            <!--Criação de um botão para o calculo-->
+            <button class="btn" type="button" onclick="Calc_Temp()">Calcular</button>
+            <!--Calc_Temp é a função que deve ser especificada no ficheiro javascript-->
+        </div>
+    </div>
+    <div>
+        <!--Mostra o texto de resultado da operação após pressionar o botão EXEMPLO DE DOIS RESULTADOS NO MESMO BOTAO-->
+        <h4> Fahrenheit (°F): <span id="resultado_TempF"></span> </h4>
+        <h4> Kelvin (°K): <span id="resultado_TempK"></span> </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+
+    <!-- -------------------------------------------------------------------------------------------------------------->
+    <!-- Resolução e aplicação do exercicio do Tempo de vida em dias com aplicação de IF e ELSE-->
+    <h2>Cálculo do tempo de vida em dias de uma pessoa</h2>
+    <h3>Total de dias de vida</h3>
+    <div>
+        <p>Para saber os dias de vida de uma pessoa, preencha as seguintes informações abaixo:</p>
+    </div>
+    <div class="linha"> <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+            <div>
+                <label for="n17">Insira seu nome:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="text" id="n17" placeholder="Nome Apelido">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n17-->
+            </div>
+
+            <div>
+                <label for="n18">Qual sua idade: (em anos):</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n18">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n18-->
+            </div>
+
+            <!--Criação de um botão para o calculo-->
+            <button class="btn" type="button" onclick="Class_Idade()">Avaliar</button>
+            <!--Class_Vel é a função que deve ser especificada no ficheiro javascript-->
+        </div>
+    </div>
+    <div>
+        <!--Mostra o texto de resultado da operação após pressionar o botão EXEMPLO DE DOIS RESULTADOS NO MESMO BOTAO-->
+        <h4> Com base nas informações indicadas: <span id="resultado_idade"></span> </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+
+    <!-- -------------------------------------------------------------------------------------------------------------->
+    <!-- Resolução e aplicação do exercicio da variação de temperatura com aplicação de IF e ELSE-->
+    <h2>Cálculo e descrição da média da temperatura</h2>
+    <h3>Média da temperatura</h3>
+    <div>
+        <p>Para saber a média da temperatura e a classificação, preencha as seguintes informações abaixo:</p>
+    </div>
+    <div class="linha"> <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="n19">Insira o nome da cidade:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="text" id="n19">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n19-->
+            </div>
+
+            <div>
+                <label for="n20">Insira a temperatura mínima (°C):</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n20">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n20-->
+            </div>
+
+            <div>
+                <label for="n21">Insira a temperatura máxima (°C):</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n21">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n21-->
+            </div>
+
+            <!--Criação de um botão para o calculo-->
+            <button class="btn" type="button" onclick="Class_Amplitude()">Avaliar</button>
+            <!--Class_Vel é a função que deve ser especificada no ficheiro javascript-->
+        </div>
+    </div>
+    <div>
+        <!--Mostra o texto de resultado da operação após pressionar o botão EXEMPLO DE DOIS RESULTADOS NO MESMO BOTAO-->
+        <h4> Com base nas informações indicadas: <span id="resultado_Media"></span> </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+
+
+    <!-- -------------------------------------------------------------------------------------------------------------->
+    <!-- Resolução e aplicação do salário e valor de uma prestação com aplicação de IF e ELSE-->
+    <h2>Cálculo e descrição sobre o empréstimo</h2>
+    <h3>Informações pessoais</h3>
+    <div>
+        <p>Para saber se o empréstimo pode ser concedido, preencha as seguintes informações abaixo:</p>
+    </div>
+    <div class="linha"> <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="n22">Insira valor do salário:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n22">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n22-->
+            </div>
+
+            <div>
+                <label for="n23">Insira o valor da prestação:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n23">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n23-->
+            </div>
+
+            <!--Criação de um botão para o calculo-->
+            <button class="btn" type="button" onclick="Class_Avaliacao()">Avaliar</button>
+            <!--Class_Vel é a função que deve ser especificada no ficheiro javascript-->
+        </div>
+    </div>
+    <div>
+        <!--Mostra o texto de resultado da operação após pressionar o botão EXEMPLO DE DOIS RESULTADOS NO MESMO BOTAO-->
+        <h4> Com base nas informações indicadas: <span id="resultado_avaliacao"></span> </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+
+
+    <!-- -------------------------------------------------------------------------------------------------------------->
+    <!-- Resolução e aplicação da tabuada até  10 usando estrutura DO-->
+    <h2>Cálculo da tabuada até o número dez</h2>
+    <h3>Tabuada</h3>
+    <div>
+        <p>Escreva qual número deseja saber a tabuada até o número dez:</p>
+    </div>
+    <div class="linha"> <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="n24">Insira um número:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n24">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n24-->
+            </div>
+
+            <!--Criação de um botão para o calculo-->
+            <button class="btn" type="button" onclick="Class_Tabuada()">Avaliar</button>
+            <!--Class_Vel é a função que deve ser especificada no ficheiro javascript-->
+        </div>
+    </div>
+    <div>
+        <!--Mostra o texto de resultado da operação após pressionar o botão EXEMPLO DE DOIS RESULTADOS NO MESMO BOTAO-->
+        <h4> A tabuada do número indicado é: <span id="resultado_tabuada"></span> </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+
+    <!-- -------------------------------------------------------------------------------------------------------------->
+    <!-- Resolução e aplicação do menor de 10 numeros estrutura FOR-->
+    <h2>Cálculo do menor de 5 números</h2>
+    <h3>Menor número</h3>
+    <div>
+        <p>Escreva cinco números e verifique qual é o menor:</p>
+    </div>
+    <div class="linha"> <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="n25">Número 1:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" class="numero"> <!--CLASS é usado para agrupar elementos-->
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n25-->
+            </div>
+
+            <div>
+                <label for="n26">Número 2:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" class="numero"><!--CLASS é usado para agrupar elementos-->
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n26-->
+            </div>
+
+            <div>
+                <label for="n27">Número 3:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" class="numero"><!--CLASS é usado para agrupar elementos-->
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n27-->
+            </div>
+
+            <div>
+                <label for="n28">Número 4:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" class="numero"><!--CLASS é usado para agrupar elementos-->
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n28-->
+            </div>
+
+            <div>
+                <label for="n29">Número 5:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" class="numero"><!--CLASS é usado para agrupar elementos-->
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n29-->
+            </div>
+
+            <!--Criação de um botão para o calculo-->
+            <button class="btn" type="button" onclick="Class_menor_cinco()">Avaliar</button>
+            <!--Class_Vel é a função que deve ser especificada no ficheiro javascript-->
+        </div>
+    </div>
+    <div>
+        <!--Mostra o texto de resultado da operação após pressionar o botão EXEMPLO DE DOIS RESULTADOS NO MESMO BOTAO-->
+        <h4> O menor número é: <span id="resultado_menor_cinco"></span> </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+
+
+
+    <!-- AULA 1 22/04/2026 -FIM-->
+
+    <!-- EXEMPLOS DOS EXERCICIOS DE PSEUDOCODIGO-->
+    <!-- Resolução e aplicação do exercicio da média dos alunos-->
+    <h2>Ficha do Aluno</h2>
+    <div>
+        <p>Para o cálculo da média dos alunos, preencha os quadros abaixo com as notas dos alunos.</p>
+    </div>
+    <div class="linha">
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="nome">Nome e Apelido: </label>
+                <input type="text" id="nome" placeholder="Nome Apelido">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="curso">Curso: </label>
+                <input type="text" id="curso"> <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="turma">Turma: </label>
+                <input type="text" id="turma"> <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="n9">Nota 1:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n9">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n9-->
+            </div>
+
+            <div>
+                <label for="n10">Nota 2:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n10">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n10-->
+            </div>
+
+            <div>
+                <label for="n11">Nota 3:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n11">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n11-->
+            </div>
+            <!--Criação de um botão para o calculo-->
+            <button class="btn" type="button" onclick="calcularMedia()">Calcular</button>
+            <!--calcularMedia é a função que deve ser especificada no ficheiro javascript-->
+        </div>
+    </div>
+
+    <div> <!--Mostra o texto de resultado da operação após pressionar o botão-->
+        <h4> Nome do aluno: <span id="nome_"></span> </h4>
+        <h4> Curso do aluno: <span id="curso_"></span> </h4>
+        <h4> Turma do aluno: <span id="turma_"></span> </h4>
+        <h4> Nota 1 do aluno: <span id="n9_"></span> </h4>
+        <h4> Nota 2 do aluno: <span id="n10_"></span> </h4>
+        <h4> Nota 3 do aluno: <span id="n11_"></span> </h4>
+        <h4> Média do aluno: <span id="resultado_media"></span> </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+
+
+    <!-- Resolução e aplicação do exercicio da VM com aplicação de IF e ELSE-->
+    <h2>Dados da viagem</h2>
+    <h3>Classificação da velocidade média</h3>
+    <div>
+        <p>Para saber a classificação da velocidade média, insira a distância em quilómetros e o tempo de viagem:
+        </p>
+    </div>
+    <div>
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div>
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+            <div>
+                <label for="n15">Distância percorrida em quilómetros:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n15">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n15-->
+            </div>
+
+            <div>
+                <label for="n16">Tempo da viagem em horas:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="n16">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID n16-->
+            </div>
+
+            <!--Criação de um botão para o calculo-->
+            <button class="btn" type="button" onclick="Class_Vel()">Avaliar</button>
+            <!--Class_Vel é a função que deve ser especificada no ficheiro javascript-->
+        </div>
+    </div>
+    <div>
+        <!--Mostra o texto de resultado da operação após pressionar o botão EXEMPLO DE DOIS RESULTADOS NO MESMO BOTAO-->
+        <h4> Distância: <span id="n15_"></span> </h4>
+        <h4> Tempo: <span id="n16_"></span> </h4>
+        <h4> Velocidade Média: <span id="resultado_VM"></span> km/h </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+        <h4> Classificação da velocidade: <span id="resultado_Aviso"></span> </h4>
+        <!--o span é um espaço na mesma linha para mostrar o resultado da conta indicada no javascript-->
+    </div>
+
+    <!-- Resolução e aplicação do exercicio VEICULOS -->
+    <h2>Listagem de veículos</h2>
+    <div>
+        <p>Insira as informações abaixo para saber o total de quilómetros percorridos por todos os veículos:</p>
+    </div>
+    <h3> Veículo 1</h3>
+    <div class="linha">
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+            <div>
+                <label for="m1">Matricula:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="text" id="m1" placeholder="AA-00-AA">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+            </div>
+
+            <div>
+                <label for="marca1">Marca:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="text" id="marca1" placeholder="Toyota">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+            </div>
+
+            <div>
+                <label for="km1">Kms percorridos:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="km1">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+            </div>
+
+            <h3>Veículo 2</h3>
+            <div class="linha">
+                <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+                <div class="campos">
+                    <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+                    <div>
+                        <label for="m2">Matricula:</label>
+                        <!--Criação de uma rótulo de dados com informações em texto-->
+                        <input type="text" id="m2" placeholder="BB-11-BB">
+                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                    </div>
+
+                    <div>
+                        <label for="marca2">Marca:</label>
+                        <!--Criação de uma rótulo de dados com informações em texto-->
+                        <input type="text" id="marca2" placeholder="Toyota">
+                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                    </div>
+
+                    <div>
+                        <label for="km2">Kms percorridos:</label>
+                        <!--Criação de uma rótulo de dados com informações em texto-->
+                        <input type="number" id="km2">
+                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                    </div>
+
+                    <h3>Veículo 3</h3>
+                    <div class="linha">
+                        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+                        <div class="campos">
+                            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+                            <div>
+                                <label for="m3">Matricula:</label>
+                                <!--Criação de uma rótulo de dados com informações em texto-->
+                                <input type="text" id="m3" placeholder="CC-22-CC">
+                                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                            </div>
+
+                            <div>
+                                <label for="marca3">Marca:</label>
+                                <!--Criação de uma rótulo de dados com informações em texto-->
+                                <input type="text" id="marca3" placeholder="Toyota">
+                                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                            </div>
+
+                            <div>
+                                <label for="km3">Kms percorridos:</label>
+                                <!--Criação de uma rótulo de dados com informações em texto-->
+                                <input type="number" id="km3">
+                                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                            </div>
+
+                            <h3>Veículo 4</h3>
+                            <div class="linha">
+                                <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+                                <div class="campos">
+                                    <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+                                    <div>
+                                        <label for="m4">Matricula:</label>
+                                        <!--Criação de uma rótulo de dados com informações em texto-->
+                                        <input type="text" id="m4" placeholder="DD-33-DD">
+                                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                    </div>
+
+                                    <div>
+                                        <label for="marca4">Marca:</label>
+                                        <!--Criação de uma rótulo de dados com informações em texto-->
+                                        <input type="text" id="marca4" placeholder="Toyota">
+                                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                    </div>
+
+                                    <div>
+                                        <label for="km4">Kms percorridos:</label>
+                                        <!--Criação de uma rótulo de dados com informações em texto-->
+                                        <input type="number" id="km4">
+                                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <h3>Veículo 5</h3>
+                            <div class="linha">
+                                <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+                                <div class="campos">
+                                    <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+                                    <div>
+                                        <label for="m5">Matricula:</label>
+                                        <!--Criação de uma rótulo de dados com informações em texto-->
+                                        <input type="text" id="m5" placeholder="EE-44-EE">
+                                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                    </div>
+
+                                    <div>
+                                        <label for="marca5">Marca:</label>
+                                        <!--Criação de uma rótulo de dados com informações em texto-->
+                                        <input type="text" id="marca5" placeholder="Toyota">
+                                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                    </div>
+
+                                    <div>
+                                        <label for="km5">Kms percorridos:</label>
+                                        <!--Criação de uma rótulo de dados com informações em texto-->
+                                        <input type="number" id="km5">
+                                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                    </div>
+
+                                    <h3>Veículo 6</h3>
+                                    <div class="linha">
+                                        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+                                        <div class="campos">
+                                            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+                                            <div>
+                                                <label for="m6">Matricula:</label>
+                                                <!--Criação de uma rótulo de dados com informações em texto-->
+                                                <input type="text" id="m6" placeholder="FF-55-FF">
+                                                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                            </div>
+
+                                            <div>
+                                                <label for="marca6">Marca:</label>
+                                                <!--Criação de uma rótulo de dados com informações em texto-->
+                                                <input type="text" id="marca6" placeholder="Toyota">
+                                                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                            </div>
+
+                                            <div>
+                                                <label for="km6">Kms percorridos:</label>
+                                                <!--Criação de uma rótulo de dados com informações em texto-->
+                                                <input type="number" id="km6">
+                                                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                            </div>
+
+                                            <h3>Veículo 7</h3>
+                                            <div class="linha">
+                                                <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+                                                <div class="campos">
+                                                    <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+                                                    <div>
+                                                        <label for="m7">Matricula:</label>
+                                                        <!--Criação de uma rótulo de dados com informações em texto-->
+                                                        <input type="text" id="m7" placeholder="GG-66-GG">
+                                                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                                    </div>
+
+                                                    <div>
+                                                        <label for="marca7">Marca:</label>
+                                                        <!--Criação de uma rótulo de dados com informações em texto-->
+                                                        <input type="text" id="marca7" placeholder="Toyota">
+                                                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                                    </div>
+
+                                                    <div>
+                                                        <label for="km7">Kms percorridos:</label>
+                                                        <!--Criação de uma rótulo de dados com informações em texto-->
+                                                        <input type="number" id="km7">
+                                                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                                    </div>
+
+                                                    <h3>Veículo 8</h3>
+                                                    <div class="linha">
+                                                        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+                                                        <div class="campos">
+                                                            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+                                                            <div>
+                                                                <label for="m8">Matricula:</label>
+                                                                <!--Criação de uma rótulo de dados com informações em texto-->
+                                                                <input type="text" id="m8" placeholder="HH-77-HH">
+                                                                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                                            </div>
+
+                                                            <div>
+                                                                <label for="marca8">Marca:</label>
+                                                                <!--Criação de uma rótulo de dados com informações em texto-->
+                                                                <input type="text" id="marca8" placeholder="Toyota">
+                                                                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                                            </div>
+
+                                                            <div>
+                                                                <label for="km8">Kms percorridos:</label>
+                                                                <!--Criação de uma rótulo de dados com informações em texto-->
+                                                                <input type="number" id="km8">
+                                                                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                                            </div>
+                                                            <h3>Veículo 9</h3>
+                                                            <div class="linha">
+                                                                <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+                                                                <div class="campos">
+                                                                    <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+                                                                    <div>
+                                                                        <label for="m9">Matricula:</label>
+                                                                        <!--Criação de uma rótulo de dados com informações em texto-->
+                                                                        <input type="text" id="m9"
+                                                                            placeholder="II-88-II">
+                                                                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                                                    </div>
+
+                                                                    <div>
+                                                                        <label for="marca9">Marca:</label>
+                                                                        <!--Criação de uma rótulo de dados com informações em texto-->
+                                                                        <input type="text" id="marca9"
+                                                                            placeholder="Toyota">
+                                                                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                                                    </div>
+
+                                                                    <div>
+                                                                        <label for="km9">Kms percorridos:</label>
+                                                                        <!--Criação de uma rótulo de dados com informações em texto-->
+                                                                        <input type="number" id="km9">
+                                                                        <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                                                    </div>
+
+                                                                    <h3>Veículo 10</h3>
+                                                                    <div class="linha">
+                                                                        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+                                                                        <div class="campos">
+                                                                            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+                                                                            <div>
+                                                                                <label for="m10">Matricula:</label>
+                                                                                <!--Criação de uma rótulo de dados com informações em texto-->
+                                                                                <input type="text" id="m10"
+                                                                                    placeholder="JJ-99-JJ">
+                                                                                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                                                            </div>
+
+                                                                            <div>
+                                                                                <label for="marca10">Marca:</label>
+                                                                                <!--Criação de uma rótulo de dados com informações em texto-->
+                                                                                <input type="text" id="marca10"
+                                                                                    placeholder="Toyota">
+                                                                                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID -->
+                                                                            </div>
+
+                                                                            <div>
+                                                                                <label for="km10">Kms
+                                                                                    percorridos:</label>
+                                                                                <!--Criação de uma rótulo de dados com informações em texto-->
+                                                                                <input type="number" id="km10">
+                                                                                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID-->
+
+                                                                                <!--Criação de um botão para o calculo-->
+                                                                                <button class="btn" type="button"
+                                                                                    onclick="Class_TotalKm()">Submeter</button>
+                                                                                <!--Class_Vel é a função que deve ser especificada no ficheiro javascript-->
+                                                                            </div>
+                                                                            <div>
+                                                                                <!--Mostra o texto de resultado da operação após pressionar o botão EXEMPLO DE DOIS RESULTADOS NO MESMO BOTAO-->
+                                                                                <h4> Lista dos veículos veículos foi de:
+                                                                                    <span id="ListaVeic"></span>
+                                                                                </h4>
+                                                                                <h4> Total percorrido por todos os
+                                                                                    veículos foi de: <span
+                                                                                        id="resultado_TotalKm"></span>
+                                                                                    quilómetros
+                                                                                </h4>
+                                                                            </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

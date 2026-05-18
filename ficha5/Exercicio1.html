@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt"> <!-- Linguagem a ser predefinida-->
+
+<head>
+    <meta charset="UTF-8"> <!-- Linguagem a ser predefinida-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5 - 06/05/2026</title> <!-- Nome do arquivo-->
+    <link rel="stylesheet" href="src/css/style.css"> <!-- Conexão do ficheiro CSS com o ficheiro HTML-->
+    <script src="src/js/jquery.js"></script>
+    <!-- Conexão do ficheiro javascript com o ficheiro HTML jquery, ATENCAO: sempre deve estar em primeiro lugar antes do ficheiro de funções JS-->
+    <script src="src/js/funcoes.js"></script> <!-- Conexão do ficheiro javascript com o ficheiro HTML-->
+</head>
+
+<body>
+
+    <!-- Resolução e aplicação do exercicio da média dos alunos-->
+    <h2>Registo de participantes no workshop de programação</h2>
+    <div class="ex3">
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="NIF"> Número de Identificação Fiscal (NIF): </label>
+                <input class="box2" type="number" id="NIF">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="Nome">Nome e apelido: </label>
+                <input class="box2" type="text" id="Nome">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="Morada">Morada: </label>
+                <input class="box2" type="text" id="Morada">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="Idade">Idade: </label>
+                <input class="box2" type="number" id="Idade">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="Telefone">Telefone: </label>
+                <input class="box2" type="number" id="Telefone">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+
+            <div>
+                <label for="work">Selecione o workshop:
+                </label><!--Criação de uma lista de itens como opção de resposta-->
+                <select id="work" name="workshop">
+                    <option value="html" id="work">HTLM</option>
+                    <option value="java" id="work">Java</option>
+                    <option value="c#" id="work">C#</option>
+                    <option value="php" id="work">php</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!--Criação de um botão para o calculo-->
+    <div>
+        <button class="btn" type="button" onclick="RegistarWork()">Registar</button>
+        <!--RegistarProdutos é a função que deve ser especificada no ficheiro javascript-->
+        <button class="btn" type="button" onclick="ListaWork()">Listagem</button>
+        <!--ListaProdutos é a função que deve ser especificada no ficheiro javascript-->
+    </div>
+
+    <div>
+        <select id="listaInscricao" onchange="getCurso(this.value)">
+            <option value="-99">Listagem completa de inscritos</option>
+            <option value="html">HTML</option>
+            <option value="java">Java</option>
+            <option value="c#">C#</option>
+            <option value="php">PHP</option>
+        </select>
+    </div>
+
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Posição do inscrito</th>
+                    <th>NIF</th>
+                    <th>Nome</th>
+                    <th>Morada</th>
+                    <th>Idade</th>
+                    <th>Telefone</th>
+                    <th>Modalidade</th>
+                </tr>
+            </thead>
+
+            <tbody id="ListaInscritos">
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

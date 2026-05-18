@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt"> <!-- Linguagem a ser predefinida-->
+
+<head>
+    <meta charset="UTF-8"> <!-- Linguagem a ser predefinida-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1 - 29/04/2026</title> <!-- Nome do arquivo-->
+    <link rel="stylesheet" href="src/css/style.css"> <!-- Conexão do ficheiro CSS com o ficheiro HTML-->
+    <script src="src/js/funcoes.js"></script> <!-- Conexão do ficheiro javascript com o ficheiro HTML-->
+</head>
+
+<body>
+
+    <!-- Resolução e aplicação do exercicio da média dos alunos-->
+    <h2>Lista de produtos da loja</h2>
+    <div>
+        <p>Todos os produtos registados tem de ter ID, nome, descrição e preço sem IVA.</p>
+    </div>
+    <div class="linha">
+        <!--Div corresponde a um espaçamento (customização) e classe "linha" indicada no ficheiro CSS-->
+        <div class="campos">
+            <!--Div corresponde a um espaçamento (customização) e classe "campos" indicada no ficheiro CSS-->
+
+            <div>
+                <label for="ID"> ID do produto: </label>
+                <input type="text" id="ID" placeholder="123456789">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="Nome">Nome do produto: </label>
+                <input type="text" id="Nome" placeholder="Manteiga">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="Descricao">Descrição do produto: </label>
+                <input type="text" id="Descricao" placeholder="Data de validade">
+                <!--Criação um local para inserir texto, com exemplo-->
+            </div>
+            <div>
+                <label for="Preco_sem_iva">Preço do produto sem IVA:</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="Preco_sem_iva">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID-->
+            </div>
+
+            <div>
+                <label for="TaxaIVA">Taxa de IVA do produto IVA (%):</label>
+                <!--Criação de uma rótulo de dados com informações em texto-->
+                <input type="number" id="TaxaIVA">
+                <!--Criação de uma caixa de armazenamento de informação indicada pelo ID-->
+            </div>
+
+        </div>
+    </div>
+
+    <!--Criação de um botão para o calculo-->
+    </div>
+    <button class="btn" type="button" onclick="RegistarProdutos()">Registar</button>
+    <!--RegistarProdutos é a função que deve ser especificada no ficheiro javascript-->
+    <button class="btn" type="button" onclick="ListarProdutos()">Lista</button>
+    <!--ListarProdutos é a função que deve ser especificada no ficheiro javascript-->
+    </div>
+    <div id="ListaProdutos">
+    </div>
+
+</body>
+
+</html>
