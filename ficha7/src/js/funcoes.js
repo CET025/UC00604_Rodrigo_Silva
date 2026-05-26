@@ -1,220 +1,275 @@
-let tiposMusica = ["Pop", "Rock", "Clássica", "Jazz", "Fado", "Eletrónica", "Hip-Hop"];
-let eventos = [];
-let bandas = [];
+let especies = [];
+let areas = [];
+let animais = [];
+let visitantes = [];
 
-function getSelectTipos() {
 
-    if (tiposMusica.length == 0) {
+function mostrarModal(tipo, mensagem, titulo) {
 
-        $('#tipoEvento, #tipoBanda')
+    let icone = "";
+    let tituloFinal = titulo;
+    let btnClass = "";
+
+    if (tipo == "sucesso") {
+
+        icone = "&#10003;";
+        tituloFinal = tituloFinal || "Sucesso";
+        btnClass = "btn-modal-sucesso";
+
+    } else {
+
+        icone = "!";
+        tituloFinal = tituloFinal || "Atenção";
+        btnClass = "btn-modal-erro";
+    }
+
+    $('#modalMensagemIcone').html(icone);
+    $('#modalMensagemTitulo').text(tituloFinal);
+    $('#modalMensagemTexto').text(mensagem);
+
+    $('#modalMensagemIconWrap')
+        .removeClass('modal-icone-sucesso modal-icone-erro')
+        .addClass(tipo == "sucesso" ? 'modal-icone-sucesso' : 'modal-icone-erro');
+
+    $('#modalMensagemBtn')
+        .removeClass('btn-modal-sucesso btn-modal-erro btn-zoo')
+        .addClass(btnClass);
+
+    $('#modalMensagem').modal('show');
+}
+
+function validaEspecie(descricao) {
+
+    for (let i = 0; i < especies.length; i++) {
+
+        if (descricao == especies[i]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function validaReferenciaArea(ref) {
+
+    for (let i = 0; i < areas.length; i++) {
+
+        if (ref == areas[i][0]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function validaChipAnimal(chip) {
+
+    for (let i = 0; i < animais.length; i++) {
+
+        if (chip == animais[i][1]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function validaVisitante(cc) {
+
+    for (let i = 0; i < visitantes.length; i++) {
+
+        if (cc == visitantes[i][2]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function registaEspecie() {
+
+    let descricao = $('#descEspecie').val().trim();
+
+    if (descricao == "") {
+
+        mostrarModal("erro", "Introduza a descrição da espécie");
+
+    } else if (validaEspecie(descricao)) {
+
+        especies.push(descricao);
+
+        console.log(especies);
+
+        mostrarModal("sucesso", "Espécie registada com sucesso!");
+
+        getSelectEspecies();
+        $('#descEspecie').val("");
+
+    } else {
+        mostrarModal("erro", "Espécie já existente");
+    }
+}
+
+function registaArea() {
+
+    let ref = $('#refArea').val().trim();
+    let desc = $('#descArea').val().trim();
+
+    if (ref == "" || desc == "") {
+
+        mostrarModal("erro", "Preencha a referência e a descrição da área");
+
+    } else if (validaReferenciaArea(ref)) {
+
+        areas.push([ref, desc]);
+
+        console.log(areas);
+
+        mostrarModal("sucesso", "Área registada com sucesso!");
+
+        getSelectAreas();
+        $('#refArea, #descArea').val("");
+
+    } else {
+        mostrarModal("erro", "Referência de área já existente");
+    }
+}
+
+function registaAnimal() {
+
+    let nome = $('#nomeAnimal').val().trim();
+    let chip = $('#chipAnimal').val().trim();
+    let data = $('#dataAnimal').val();
+    let ie = $('#especieAnimal').val();
+    let ia = $('#areaAnimal').val();
+
+    if (nome == "" || chip == "" || data == "") {
+
+        mostrarModal("erro", "Preencha todos os campos do animal");
+
+    } else if (ie == -1 || ia == -1) {
+
+        mostrarModal("erro", "Escolha a espécie e a área do animal");
+
+    } else if (validaChipAnimal(chip)) {
+
+        animais.push([
+            nome,
+            chip,
+            data,
+            Number(ie),
+            Number(ia)
+        ]);
+
+        console.log(animais);
+
+        mostrarModal("sucesso", "Animal registado com sucesso!");
+
+        $('#nomeAnimal, #chipAnimal, #dataAnimal').val("");
+        $('#especieAnimal, #areaAnimal').val("-1");
+
+    } else {
+        mostrarModal("erro", "Número de chip já existente");
+    }
+}
+
+function registaVisitante() {
+
+    let nome = $('#nomeVisitante').val().trim();
+    let email = $('#emailVisitante').val().trim();
+    let cc = $('#ccVisitante').val().trim();
+
+    if (nome == "" || email == "" || cc == "") {
+
+        mostrarModal("erro", "Preencha todos os campos do visitante");
+
+    } else if (validaVisitante(cc)) {
+
+        visitantes.push([
+            nome,
+            email,
+            cc,
+            []
+        ]);
+
+        console.log(visitantes);
+
+        mostrarModal("sucesso", "Visitante registado com sucesso!");
+
+        getSelectVisitantes();
+
+        $('#nomeVisitante, #emailVisitante, #ccVisitante').val("");
+
+    } else {
+        mostrarModal("erro", "Visitante já existente no sistema");
+    }
+}
+
+function getSelectEspecies() {
+
+    if (especies.length == 0) {
+
+        $('#especieAnimal')
             .prop('disabled', true)
-            .html("<option value='-1' disabled selected>Sem dados registados</option>");
+            .html("<option value='-1' disabled selected>Sem espécies registadas</option>");
 
     } else {
 
-        let msg = "<option value='-1'>Escolha um tipo</option>";
+        let msg = "<option value='-1'>Escolha uma espécie</option>";
 
-        for (let i = 0; i < tiposMusica.length; i++) {
-
-            msg += "<option value='" + tiposMusica[i] + "'>" + tiposMusica[i] + "</option>";
+        for (let i = 0; i < especies.length; i++) {
+            msg += "<option value='" + i + "'>" + especies[i] + "</option>";
         }
 
-        $('#tipoEvento, #tipoBanda').prop('disabled', false).html(msg);
+        $('#especieAnimal').prop('disabled', false).html(msg);
     }
 }
 
-function validaTipoMusica(tipo) {
+function getSelectAreas() {
 
-    let flag = true;
+    if (areas.length == 0) {
 
-    for (let i = 0; i < tiposMusica.length; i++) {
-
-        if (tipo == tiposMusica[i]) {
-            flag = false;
-            break;
-        }
-    }
-
-    return flag;
-}
-
-function registoTipoMusical() {
-
-    let tipo = $('#novoTipoMusica').val();
-
-    if (tipo == "") {
-
-        alert("Introduza o tipo musical");
-
-    } else {
-
-        let resposta = validaTipoMusica(tipo);
-
-        if (resposta) {
-
-            tiposMusica.push(tipo);
-
-            console.log(tiposMusica);
-
-            alert("Tipo musical registado!");
-
-            getSelectTipos();
-
-            $('#novoTipoMusica').val("");
-
-        } else {
-            alert("Tipo musical já existe");
-        }
-    }
-}
-
-function validaEvento(numero) {
-
-    let flag = true;
-
-    for (let i = 0; i < eventos.length; i++) {
-
-        if (numero == eventos[i][0]) {
-            flag = false;
-            break;
-        }
-    }
-
-    return flag;
-}
-
-function validaBanda(codigo, nome) {
-
-    let flag = true;
-
-    for (let i = 0; i < bandas.length; i++) {
-
-        if (codigo == bandas[i][1] || nome == bandas[i][0]) {
-            flag = false;
-            break;
-        }
-    }
-
-    return flag;
-}
-
-function validaPublico(ie, nif) {
-
-    let flag = true;
-
-    for (let i = 0; i < eventos[ie][7].length; i++) {
-
-        if (eventos[ie][7][i][1] == nif) {
-            flag = false;
-            break;
-        }
-    }
-
-    return flag;
-}
-
-function RegistarEvento() {
-
-    let numero = $('#N_registo').val();
-    let local = $('#local').val();
-    let latitude = $('#latitude').val();
-    let longitude = $('#longitude').val();
-    let horario = $('#horario').val();
-    let tipo = $('#tipoEvento').val();
-
-    if (numero == "" || local == "" || latitude == "" || longitude == "" || horario == "" || tipo == -1) {
-
-        alert("É necessário preencher todos os campos");
-
-    } else {
-
-        let resposta = validaEvento(numero);
-
-        if (resposta) {
-
-            eventos.push([
-                numero,
-                local,
-                latitude,
-                longitude,
-                horario,
-                tipo,
-                [], // Esses arrays para adicionar informações das bandas
-                [] // Esses arrays  para adicionar informações dos eventos
-            ]);
-
-            console.log(eventos);
-
-            alert("Evento registado!");
-
-            getSelectEventos();
-
-        } else {
-            alert("Evento já existe");
-        }
-    }
-}
-
-function RegistarBandas() {
-
-    let nome = $('#nomeBanda').val();
-    let codigo = $('#codigoBanda').val();
-    let tipo = $('#tipoBanda').val();
-
-    if (nome == "" || codigo == "" || tipo == -1) {
-
-        alert("Preencha todos os campos da banda");
-
-    } else {
-
-        let resposta = validaBanda(codigo, nome);
-
-        if (resposta) {
-
-            bandas.push([
-                nome,
-                codigo,
-                tipo
-            ]);
-
-            console.log(bandas);
-
-            alert("Banda registada!");
-
-        } else {
-            alert("Banda já existe");
-        }
-    }
-}
-
-function getSelectEventos() {
-
-    if (eventos.length == 0) {
-
-        $('#associarEvento, #publicoEvento, #listagemEventoBandas, #listagemEventoPublico')
+        $('#areaAnimal')
             .prop('disabled', true)
-            .html("<option value='-1' disabled selected>Sem dados registados</option>");
+            .html("<option value='-1' disabled selected>Sem áreas registadas</option>");
 
     } else {
 
-        let msg = "<option value='-1'>Escolha um evento</option>";
+        let msg = "<option value='-1'>Escolha uma área</option>";
 
-        for (let i = 0; i < eventos.length; i++) {
-
-            msg += "<option value='" + i + "'>" + eventos[i][0] + " - " + eventos[i][1] + "</option>";
+        for (let i = 0; i < areas.length; i++) {
+            msg += "<option value='" + i + "'>" + areas[i][0] + " - " + areas[i][1] + "</option>";
         }
 
-        $('#associarEvento, #publicoEvento, #listagemEventoBandas, #listagemEventoPublico')
-            .prop('disabled', false)
-            .html(msg);
+        $('#areaAnimal').prop('disabled', false).html(msg);
     }
 }
 
-function bandaJaAssociada(ie, ib) {
+function getSelectVisitantes() {
 
-    for (let i = 0; i < eventos[ie][6].length; i++) {
+    if (visitantes.length == 0) {
 
-        if (eventos[ie][6][i] == ib) {
+        $('#visitanteAreas, #visitanteListagem')
+            .prop('disabled', true)
+            .html("<option value='-1' disabled selected>Sem visitantes registados</option>");
+
+    } else {
+
+        let msg = "<option value='-1'>Escolha um visitante</option>";
+
+        for (let i = 0; i < visitantes.length; i++) {
+            msg += "<option value='" + i + "'>" + visitantes[i][0] + " (" + visitantes[i][2] + ")</option>";
+        }
+
+        $('#visitanteAreas, #visitanteListagem').prop('disabled', false).html(msg);
+    }
+}
+
+function areaJaEscolhida(iv, ia) {
+
+    for (let i = 0; i < visitantes[iv][3].length; i++) {
+
+        if (visitantes[iv][3][i] == ia) {
             return true;
         }
     }
@@ -222,181 +277,155 @@ function bandaJaAssociada(ie, ib) {
     return false;
 }
 
-function checklistbandas() {
+function getCheckboxesAreas() {
 
-    let ie = $('#associarEvento').val();
+    let iv = $('#visitanteAreas').val();
     let msg = "";
 
-    if (ie == -1) {
+    if (iv == -1) {
 
-        $('#ChecagemdasBandas').html(msg);
-        alert("É necessário escolha um evento");
+        $('#checkboxesAreas').html(msg);
+        mostrarModal("erro", "Escolha um visitante");
+
+    } else if (areas.length == 0) {
+
+        msg = "<p class='text-muted mb-0'>Não existem áreas registadas</p>";
+        $('#checkboxesAreas').html(msg);
 
     } else {
 
-        let tipoEvento = eventos[ie][5];
-        let encontrou = false;
+        for (let i = 0; i < areas.length; i++) {
 
-        for (let i = 0; i < bandas.length; i++) {
+            let checked = "";
 
-            if (bandas[i][2] == tipoEvento) {
-
-                encontrou = true;
-                let checked = "";
-
-                if (bandaJaAssociada(Number(ie), i)) {
-                    checked = " checked";
-                }
-
-                msg += "<label class='checkbox-item'>";
-                msg += "<input type='checkbox' value='" + i + "'" + checked + "> ";
-                msg += bandas[i][0] + " (" + bandas[i][1] + ")";
-                msg += "</label>";
+            if (areaJaEscolhida(Number(iv), i)) {
+                checked = " checked";
             }
+
+            msg += "<label class='checkbox-item d-block mb-2'>";
+            msg += "<input type='checkbox' class='form-check-input me-2' value='" + i + "'" + checked + "> ";
+            msg += areas[i][0] + " - " + areas[i][1];
+            msg += "</label>";
         }
 
-        if (!encontrou) {
-            msg = "<p class='font'>Não existem bandas do tipo " + tipoEvento + "</p>";
-        }
-
-        $('#ChecagemdasBandas').html(msg);
+        $('#checkboxesAreas').html(msg);
     }
 }
 
-function AssociacaodasBandas() {
+function registarAreasVisitante() {
 
-    let ie = $('#associarEvento').val();
+    let iv = $('#visitanteAreas').val();
 
-    if (ie == -1) {
+    if (iv == -1) {
 
-        alert("Escolha um evento");
+        mostrarModal("erro", "Escolha um visitante");
+
+    } else if (areas.length == 0) {
+
+        mostrarModal("erro", "Não existem áreas registadas");
 
     } else {
 
-        ie = Number(ie);
-        eventos[ie][6] = [];
+        iv = Number(iv);
+        visitantes[iv][3] = [];
 
-        let checks = $('#checkboxesBandas input:checked');
+        let checks = $('#checkboxesAreas input:checked');
 
         for (let i = 0; i < checks.length; i++) {
-
-            eventos[ie][6].push(Number(checks.eq(i).val()));
-
+            visitantes[iv][3].push(Number(checks.eq(i).val()));
         }
 
-        console.log(eventos);
+        console.log(visitantes);
 
-        alert("Bandas associadas com sucesso!");
+        mostrarModal("sucesso", "Áreas registadas com sucesso!");
     }
 }
 
-function RegistarPublico() {
+function listarAreasVisitante() {
 
-    let ie = $('#publicoEvento').val();
-    let nome = $('#nomePublico').val();
-    let nif = $('#nifPublico').val();
-    let telemovel = $('#telemovelPublico').val();
-    let email = $('#emailPublico').val();
-
-    if (ie == -1) {
-
-        alert("Escolha um evento");
-
-    } else if (nome == "" || nif == "" || telemovel == "" || email == "") {
-
-        alert("Preencha todos os campos do público");
-
-    } else {
-
-        ie = Number(ie);
-
-        let resposta = validaPublico(ie, nif);
-
-        if (resposta) {
-
-            eventos[ie][7].push([
-                nome,
-                nif,
-                telemovel,
-                email
-            ]);
-
-            console.log(eventos);
-
-            alert("Público registado com sucesso!");
-
-        } else {
-            alert("NIF já registado neste evento");
-        }
-    }
-}
-
-function listagemBandasEvento() {
-
-    let ie = $('#listagemEventoBandas').val();
-    let msg = "";
-
-    if (ie == -1) {
-
-        alert("Escolha um evento");
-
-    } else {
-
-        for (let i = 0; i < eventos[ie][6].length; i++) {
-
-            let ib = eventos[ie][6][i];
-
-            msg += "<li>" + bandas[ib][0] + " (" + bandas[ib][1] + ") - " + bandas[ib][2] + "</li>";
-        }
-
-        if (msg == "") {
-            msg = "<li>Sem bandas associadas a este evento</li>";
-        }
-
-        $('#listaBandasEvento').html(msg);
-    }
-}
-
-function listagemPublicoEvento() {
-
-    let ie = $('#listagemEventoPublico').val();
+    let iv = $('#visitanteListagem').val();
     let txt = "";
 
-    if (ie == -1) {
+    if (iv == -1) {
 
-        alert("Escolha um evento");
+        mostrarModal("erro", "Escolha um visitante");
 
     } else {
 
-        for (let i = 0; i < eventos[ie][7].length; i++) {
+        iv = Number(iv);
+
+        for (let i = 0; i < visitantes[iv][3].length; i++) {
+
+            let ia = visitantes[iv][3][i];
 
             txt += "<tr>";
-            txt += "<td class='linha'>" + eventos[ie][7][i][0] + "</td>";
-            txt += "<td class='linha'>" + eventos[ie][7][i][1] + "</td>";
-            txt += "<td class='linha'><button type='button' onclick='verDetalhesPublico(" + ie + ", " + i + ")'>Ver informação</button></td>";
+            txt += "<td>" + areas[ia][0] + "</td>";
+            txt += "<td>" + areas[ia][1] + "</td>";
+            txt += "<td class='text-center'>";
+            txt += "<button type='button' class='btn btn-sm btn-outline-zoo' onclick='verAnimaisArea(" + ia + ")'>Ver animais</button>";
+            txt += "</td>";
             txt += "</tr>";
         }
 
-        $('#tabelaPublico').html(txt);
+        if (txt == "") {
+            txt = "<tr><td colspan='3' class='text-center text-muted'>Sem áreas escolhidas</td></tr>";
+        }
+
+        $('#tabelaAreasVisitante').html(txt);
     }
 }
 
-function verDetalhesPublico(ie, ip) {
+function verAnimaisArea(ia) {
 
-    let p = eventos[ie][7][ip];
-    let evento = eventos[ie][0] + " - " + eventos[ie][1];
+    let titulo = "Animais — " + areas[ia][0] + " (" + areas[ia][1] + ")";
+    let txt = "";
+    let encontrou = false;
 
-    alert(
-        "Nome: " + p[0] + "\n" +
-        "NIF: " + p[1] + "\n" +
-        "Telemóvel: " + p[2] + "\n" +
-        "Email: " + p[3] + "\n" +
-        "Evento: " + evento
-    );
+    for (let i = 0; i < animais.length; i++) {
+
+        if (animais[i][4] == ia) {
+
+            encontrou = true;
+
+            txt += "<tr>";
+            txt += "<td>" + animais[i][0] + "</td>";
+            txt += "<td>" + animais[i][1] + "</td>";
+            txt += "<td>" + animais[i][2] + "</td>";
+            txt += "<td>" + especies[animais[i][3]] + "</td>";
+            txt += "</tr>";
+        }
+    }
+
+    if (!encontrou) {
+        txt = "<tr><td colspan='4' class='text-center text-muted'>Não existem animais registados nesta área.</td></tr>";
+    }
+
+    $('#modalAnimaisAreaTitulo').text(titulo);
+    $('#modalAnimaisAreaCorpo').html(txt);
+
+    $('#modalAnimaisArea').modal('show');
 }
 
+function enviarContacto() {
+
+    let nome = $('#contactoNome').val().trim();
+    let email = $('#contactoEmail').val().trim();
+    let mensagem = $('#contactoMensagem').val().trim();
+
+    if (nome == "" || email == "" || mensagem == "") {
+
+        mostrarModal("erro", "Preencha todos os campos do formulário de contacto");
+
+    } else {
+
+        mostrarModal("sucesso", "Obrigado " + nome + "! A sua mensagem foi enviada com sucesso.", "Mensagem enviada");
+
+        $('#contactoNome, #contactoEmail, #contactoMensagem').val("");
+    }
+}
 
 $(function() {
-    getSelectTipos();
-    getSelectEventos();
+    getSelectEspecies();
+    getSelectAreas();
+    getSelectVisitantes();
 });
